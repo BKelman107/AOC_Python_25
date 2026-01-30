@@ -1,5 +1,5 @@
 from aoc_code.utils import open_data_text_file, split_data
-from aoc_code import day_1  # import other days as needed
+from aoc_code import day_1, day_2_logic  # import other days as needed
 import argparse
 
 
@@ -21,6 +21,13 @@ def main(day: int, test: bool = False) -> None:
         print(f"Part 1 Result: {result_part_1}")
         result_part_2 = day_1(data_ints, data_directions, part=2)
         print(f"Part 2 Result: {result_part_2}")
+
+    if day == 2:
+        data = open_data_text_file(2, test=False)
+        data_list = split_data(data, ",")
+        print(f'Part 1 disallowed IDs: {day_2_logic(1,data_list)}')
+        print(f'Part 2 disallowed IDs: {day_2_logic(2,data_list)}')
+
 
 
 if __name__ == "__main__":
